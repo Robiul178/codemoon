@@ -34,7 +34,7 @@ function App() {
           element: <FAQ></FAQ>
         },
         {
-          path: '/Courses',
+          path: '/courses/:id',
           element: <Courses></Courses>,
         },
         {
