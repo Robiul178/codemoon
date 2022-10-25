@@ -35,7 +35,7 @@ function App() {
         },
         {
           path: '/Courses',
-          element: <Courses></Courses>
+          element: <Courses></Courses>,
         },
         {
           path: '/anotherpage',

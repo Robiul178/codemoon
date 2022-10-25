@@ -1,16 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import DisplayCourse from './DisplayCourse/DisplayCourse';
 
 const Courses = () => {
+    const [courses, setCourses] = useState([]);
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/courses')
+            .then(res => res.json())
+            .then(data => setCourses(data));
+    }, [])
+
     return (
         <div>
-            <h1>This is Shop Page</h1>
-            <button className="btn btn-outline">Button</button>
+            {/* <h1>Courses:{courses.length}</h1>
             <Link to='/anotherpage'>
                 <button className="btn btn-outline btn-primary">Another Page</button>
-            </Link>
-            <button className="btn btn-outline btn-secondary">Button</button>
-            <button className="btn btn-outline btn-accent">Button</button>
+            </Link> */}
+            <div>
+                {
+                    courses.map(course => <DisplayCourse
+                        course={course}
+                        key={course.id}
+                    ></DisplayCourse>)
+                }
+            </div>
         </div>
     );
 };

@@ -1,0 +1,11 @@
+.text-div {
+    font-size: 8px;
+    position: relative;
+    top: -15px;
+}
+
+.user-info {
+    background-color: #1eb2a6;
+    padding: 5px 70px;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}

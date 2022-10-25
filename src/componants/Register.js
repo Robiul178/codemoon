@@ -5,7 +5,6 @@ import { AuthContext } from './Context/UseContext';
 const Register = () => {
 
     const { createUser, signInWithGoogle } = useContext(AuthContext);
-    // console.log('CreateUser', createUser)
 
     const handleSubmit = event => {
         event.preventDefault();
