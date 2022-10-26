@@ -2,7 +2,10 @@
     border-radius: 20px;
     font-size: 20px;
     text-align: left;
-    background-color: #20134E;
     margin-top: 24px;
     margin-right: 8px;
+}
+
+.side-menu {
+    margin-top: 58px;
 }

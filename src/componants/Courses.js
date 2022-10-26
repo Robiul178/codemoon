@@ -15,10 +15,6 @@ const Courses = () => {
 
     return (
         <div className='home-container'>
-            {/* <h1>Courses:{courses.length}</h1>
-            <Link to='/anotherpage'>
-                <button className="btn btn-outline btn-primary">Another Page</button>
-            </Link> */}
             <div className='course-container ml-14'>
                 {
                     courses.map(course => <DisplayCourse
