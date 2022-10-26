@@ -26,13 +26,13 @@ const ReadMore = () => {
                         <h2>10+</h2>
                     </div>
                 </div>
-                <p className='text-2xl'>{description}</p>
+                <p className='text-lg'>{description}</p>
                 <div className="flex mt-6 justify-around">
-                    <p>Price:{price}</p>
-                    <p>Rating:{rating.rate}</p>
-                    <p>Student:{student}</p>
+                    <p className='shadow-2xl p-3'>Price:{price}</p>
+                    <p className='shadow-2xl p-3'>Rating:{rating.rate}</p>
+                    <p className='shadow-2xl p-3'>Student:{student}</p>
                     <Link to='/anotherpage'>
-                        <button className="btn btn-outline btn-primary">Another Page</button>
+                        <button className="btn btn-outline btn-success">Get Premium</button>
                     </Link>
                 </div>
             </div>

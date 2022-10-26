@@ -12,18 +12,19 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const name = form.name.value;
-        console.log(name, email, password)
+        const photoURL = form.photoURL.value;
+        console.log(name, email, password, photoURL)
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 form.reset();
-                console.log('Register User', user)
             })
             .catch(error => {
                 console.error(error)
             })
     }
+
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
@@ -43,25 +44,31 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered" />
+                            <input type="text" name='name' placeholder="Your Full Name" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="Email" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <input type="text" name='photoURL' placeholder="Your Photo URL" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="text" name='password' placeholder="Password" className="input input-bordered" required />
                             <label className="label">
                                 <Link to="/login" className="label-text-alt link link-hover"> Already , Have an Account?</Link>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
                     <button onClick={handleGoogleSignIn} className="btn gap-2">
