@@ -1,11 +1,15 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import '../CSS/ReadMore.css';
 
 const ReadMore = () => {
     const course = useLoaderData();
+    const { description, price, title, image, student, rate } = course;
     return (
         <div>
-            This is Read More:{course.title}
+            <div>
+                <img src={image} alt="" />
+            </div>
         </div>
     );
 };

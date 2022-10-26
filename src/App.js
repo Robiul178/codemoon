@@ -45,13 +45,14 @@ function App() {
         {
           path: '/register',
           element: <Register></Register>
-        },
-        {
-          path: '/readmore/:id',
-          element: <ReadMore></ReadMore>,
-          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
         }
+
       ]
+    },
+    {
+      path: '/readmore/:id',
+      element: <ReadMore></ReadMore>,
+      loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
     }
   ])
   return (

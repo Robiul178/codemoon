@@ -19,7 +19,7 @@ const Courses = () => {
             <Link to='/anotherpage'>
                 <button className="btn btn-outline btn-primary">Another Page</button>
             </Link> */}
-            <div className='course-container relative left-24'>
+            <div className='course-container ml-14'>
                 {
                     courses.map(course => <DisplayCourse
                         course={course}
