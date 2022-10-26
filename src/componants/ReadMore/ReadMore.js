@@ -8,9 +8,17 @@ const ReadMore = () => {
     return (
         <div className='rm-container'>
             <div>
-                <img src={image} alt="" />
+                <img className='mt-16' src={image} alt="" />
+                <div className="flex mt-6 justify-around">
+                    <p className='shadow-2xl p-3'>Price:{price}</p>
+                    <p className='shadow-2xl p-3'>Rating:{rating.rate}</p>
+                    <p className='shadow-2xl p-3'>Student:{student}</p>
+                    <Link to='/anotherpage'>
+                        <button className="btn btn-outline btn-success">Get Premium</button>
+                    </Link>
+                </div>
             </div>
-            <div className='text-left p-4'>
+            <div className='text-left p-4 mt-10'>
                 <h1 className='font-bold text-4xl text-yellow-300'>{title}</h1> <br />
                 <div className='flex font-bold'>
                     <div className=' p-3 mr-4 mb-4 shadow-2xl'>
@@ -27,16 +35,9 @@ const ReadMore = () => {
                     </div>
                 </div>
                 <p className='text-lg'>{description}</p>
-                <div className="flex mt-6 justify-around">
-                    <p className='shadow-2xl p-3'>Price:{price}</p>
-                    <p className='shadow-2xl p-3'>Rating:{rating.rate}</p>
-                    <p className='shadow-2xl p-3'>Student:{student}</p>
-                    <Link to='/anotherpage'>
-                        <button className="btn btn-outline btn-success">Get Premium</button>
-                    </Link>
-                </div>
             </div>
         </div>
+
     );
 };
 

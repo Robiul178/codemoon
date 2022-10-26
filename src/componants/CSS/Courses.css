@@ -1,6 +1,9 @@
 .home-container {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    width: 1400px;
+    position: relative;
+    left: 7%;
 }
 
 .course-container {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './Context/UseContext';
 
@@ -13,7 +13,7 @@ const Register = () => {
         const password = form.password.value;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
-        console.log(name, email, password, photoURL)
+        createUser(photoURL, name)
 
         createUser(email, password)
             .then(result => {
@@ -23,6 +23,8 @@ const Register = () => {
             .catch(error => {
                 console.error(error)
             })
+
+        alert('Register Sucess')
     }
 
     const handleGoogleSignIn = () => {
