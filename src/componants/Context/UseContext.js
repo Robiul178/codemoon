@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useReducer, useState } from 'react';
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -14,11 +14,24 @@ import app from '../../firebase/firebase.config';
 export const AuthContext = createContext();
 const auth = getAuth(app)
 
+
+const initialState = { darkMode: true };
+const themeReducer = (state, action) => {
+    switch (action.type) {
+        case 'toggle':
+            return { darkMode: !state.darkMode }
+        default:
+            return state;
+    }
+};
+
+
 const UseContext = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
+    const [state, dispatch] = useReducer(themeReducer, initialState);
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -48,7 +61,7 @@ const UseContext = ({ children }) => {
     }, [])
 
 
-    const authInfo = { user, createUser, singIn, logOut, signInWithGoogle, loading };
+    const authInfo = { state, dispatch, user, createUser, singIn, logOut, signInWithGoogle, loading };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

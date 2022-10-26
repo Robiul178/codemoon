@@ -11,7 +11,6 @@ import AnotherPage from './componants/AnotherPage/AnotherPage';
 import PrivetRoute from './routes/PrivetRoute';
 import Blog from './componants/Blog';
 import ReadMore from './componants/ReadMore/ReadMore';
-
 function App() {
   const router = createBrowserRouter([
     {
@@ -55,7 +54,10 @@ function App() {
       ]
     }
 
-  ])
+  ]);
+
+
+
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>

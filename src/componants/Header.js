@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './Context/UseContext';
 import './CSS/Heade.css'
+import Toogle from './Toogle';
 
 const Header = () => {
 
@@ -21,10 +22,15 @@ const Header = () => {
                                 stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl"><div>
-                        <h1>CODECADEMY</h1>
-                        <span className='text-div'>ONLINE EDUCATION & LEARNING</span>
-                    </div></Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">
+                        <div>
+                            <h1>CODECADEMY</h1>
+                            <span className='text-div'>ONLINE EDUCATION & LEARNING</span>
+                        </div>
+                    </Link>
+                    <div>
+                        <Toogle></Toogle>
+                    </div>
                 </div>
                 <div className="navbar-center  lg:flex h-14 ">
                     <ul className="menu menu-horizontal p-0">

@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './Context/UseContext';
 
 const Register = () => {
 
     const { createUser, signInWithGoogle } = useContext(AuthContext);
-    const [done, setDone] = useState(false)
+    // const [done, setDone] = useState(false)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -33,7 +33,7 @@ const Register = () => {
         else {
             alert("Your password is not correct")
         }
-        setDone(true)
+        // setDone(true)
     }
 
     const handleGoogleSignIn = () => {
