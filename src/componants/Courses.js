@@ -29,7 +29,11 @@ const Courses = () => {
             </div>
             <div className="side-menu">
                 {
-                    <SideMenu></SideMenu>
+                    courses.map(course => <SideMenu
+                        course={course}
+                        key={course.id}
+                    ></SideMenu>)
+
                 }
             </div>
         </div>

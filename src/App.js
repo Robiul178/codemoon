@@ -10,6 +10,7 @@ import Main from './Layout/Main';
 import AnotherPage from './componants/AnotherPage/AnotherPage';
 import PrivetRoute from './routes/PrivetRoute';
 import Blog from './componants/Blog';
+import ReadMore from './componants/ReadMore/ReadMore';
 
 function App() {
   const router = createBrowserRouter([
@@ -44,6 +45,11 @@ function App() {
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/readmore/:id',
+          element: <ReadMore></ReadMore>,
+          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
         }
       ]
     }

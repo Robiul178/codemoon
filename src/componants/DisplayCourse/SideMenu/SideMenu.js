@@ -1,9 +1,14 @@
 import React from 'react';
 
-const SideMenu = () => {
+const SideMenu = (props) => {
+    const { title, id } = props.course;
     return (
-        <div className='border h-56'>
-            <h1>This is Side menu</h1>
+        <div className='container divn'>
+            <div className="side-scrool">
+                <div className="scrool">
+                    <h1>Course {id}: <span>{title}</span></h1>
+                </div>
+            </div>
         </div>
     );
 };
