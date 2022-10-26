@@ -5,6 +5,7 @@ import { AuthContext } from './Context/UseContext';
 const Register = () => {
 
     const { createUser, signInWithGoogle } = useContext(AuthContext);
+    const [done, setDone] = useState(false)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -13,6 +14,7 @@ const Register = () => {
         const password = form.password.value;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
+        const cpassword = form.confirmpassword.value;
         createUser(photoURL, name)
 
         createUser(email, password)
@@ -22,9 +24,16 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error)
-            })
+            });
 
-        alert('Register Sucess')
+
+        if (password === cpassword) {
+
+        }
+        else {
+            alert("Your password is not correct")
+        }
+        setDone(true)
     }
 
     const handleGoogleSignIn = () => {
@@ -65,10 +74,17 @@ const Register = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="text" name='password' placeholder="Password" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Confirm Password</span>
+                            </label>
+                            <input type="text" name='confirmpassword' placeholder="Confirm Your Password" className="input input-bordered" required />
                             <label className="label">
                                 <Link to="/login" className="label-text-alt link link-hover"> Already , Have an Account?</Link>
                             </label>
                         </div>
+                        {/* <span>{done && "Your Registration Success"}</span> */}
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
