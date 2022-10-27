@@ -8,7 +8,7 @@ const PrivetRoute = ({ children }) => {
 
     if (loading) {
         console.log('Yes Loading Found')
-        return <div className='text-white'>Loading............</div>
+        return <div className='text-white'>Loading...</div>
     }
     if (user && user.uid) {
         return children;

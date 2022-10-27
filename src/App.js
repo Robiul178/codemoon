@@ -7,10 +7,11 @@ import Login from './componants/Login';
 import FAQ from './componants/FAQ';
 import Register from './componants/Register';
 import Main from './Layout/Main';
-import AnotherPage from './componants/AnotherPage/AnotherPage';
 import PrivetRoute from './routes/PrivetRoute';
 import Blog from './componants/Blog';
 import ReadMore from './componants/ReadMore/ReadMore';
+import CheckOut from './componants/ChechOut/CheckOut';
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -38,8 +39,9 @@ function App() {
           element: <Courses></Courses>,
         },
         {
-          path: '/anotherpage',
-          element: <PrivetRoute><AnotherPage></AnotherPage></PrivetRoute>
+          path: '/checkout/:id',
+          element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>,
+          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
         },
         {
           path: '/register',

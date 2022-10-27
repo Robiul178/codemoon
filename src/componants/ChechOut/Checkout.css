@@ -1,0 +1,7 @@
+.checkout-page {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    width: 1400px;
+    position: relative;
+    left: 8%;
+}

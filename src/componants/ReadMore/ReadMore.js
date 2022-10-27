@@ -4,7 +4,7 @@ import '../CSS/ReadMore.css';
 
 const ReadMore = () => {
     const course = useLoaderData();
-    const { description, price, title, image, student, rating } = course;
+    const { description, price, title, image, student, rating, id } = course;
     return (
         <div className='rm-container'>
             <div>
@@ -13,7 +13,7 @@ const ReadMore = () => {
                     <p className='shadow-2xl p-3'>Price:{price}</p>
                     <p className='shadow-2xl p-3'>Rating:{rating.rate}</p>
                     <p className='shadow-2xl p-3'>Student:{student}</p>
-                    <Link to='/anotherpage'>
+                    <Link to={`/checkout/${id}`}>
                         <button className="btn btn-outline btn-success">Get Premium</button>
                     </Link>
                 </div>
@@ -37,7 +37,6 @@ const ReadMore = () => {
                 <p className='text-lg'>{description}</p>
             </div>
         </div>
-
     );
 };
 
