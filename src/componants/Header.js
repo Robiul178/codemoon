@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from './Context/UseContext';
 import './CSS/Heade.css'
 import Toogle from './Toogle';
+import { FiLogOut } from 'react-icons/fi';
+
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
-
-    const handleUserName = () => {
-
-    }
 
     return (
         <div className="header-div">
@@ -44,15 +42,19 @@ const Header = () => {
                     <div className='user-info'>
                         {
                             user?.uid ?
-                                <div className="avatar placeholder">
-                                    <div className="bg-neutral-focus text-neutral-content rounded-full w-10">
-                                        <img onMouseEnter={handleUserName} src={user.photoURL} alt="" />
+
+                                <div className="avatar">
+                                    <div className="w-8 rounded">
+                                        <img src={user.photoURL} alt="Tailwind-CSS-Avatar-component" />
                                     </div>
-                                    <div>
-                                        <button onClick={logOut} className="btn  btn-outline">Log Out
-                                        </button>
-                                    </div>
+                                    <button onClick={logOut} className="btn ml-2 btn-outline"><FiLogOut /></button>
                                 </div>
+
+                                // <div className="avatar placeholder">
+                                //     <img onMouseEnter={handleUserName} src={user.photoURL} alt="" />
+                                //     <button onClick={logOut} className="btn  btn-outline">Log Out</button>
+                                // </div>
+
                                 :
                                 <>
                                     <Link className="btn btn-ghost normal-case text-xl" to="/login">Login</Link>

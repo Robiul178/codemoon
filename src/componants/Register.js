@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from './Context/UseContext';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
 
-    const { createUser, signInWithGoogle } = useContext(AuthContext);
-    // const [done, setDone] = useState(false)
+    const { createUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -14,30 +14,30 @@ const Register = () => {
         const password = form.password.value;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
-        const cpassword = form.confirmpassword.value;
         createUser(photoURL, name)
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                console.log(user)
+                setError('')
                 form.reset();
             })
             .catch(error => {
                 console.error(error)
+                setError(error.message)
             });
-
-
-        if (password === cpassword) {
-
-        }
-        else {
-            alert("Your password is not correct")
-        }
-        // setDone(true)
     }
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+    }
+    const handleGitHubSignIn = () => {
+        signInWithGithub()
             .then(result => {
                 const user = result.user;
                 console.log(user)
@@ -75,24 +75,15 @@ const Register = () => {
                             </label>
                             <input type="text" name='password' placeholder="Password" className="input input-bordered" required />
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Confirm Password</span>
-                            </label>
-                            <input type="text" name='confirmpassword' placeholder="Confirm Your Password" className="input input-bordered" required />
-                            <label className="label">
-                                <Link to="/login" className="label-text-alt link link-hover"> Already , Have an Account?</Link>
-                            </label>
-                        </div>
-                        {/* <span>{done && "Your Registration Success"}</span> */}
+                        {error}
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
-                    <button onClick={handleGoogleSignIn} className="btn gap-2">
-                        Google
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
+                    <div className="flex justify-center">
+                        <button onClick={handleGoogleSignIn} className="btn" > <FaGoogle /> </button>
+                        <button onClick={handleGitHubSignIn} className="btn"><FaGithub /></button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './Context/UseContext';
 
 const Login = () => {
 
+    const [error, setError] = useState('');
     const { singIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -21,10 +22,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                setError('');
                 navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error)
+                setError(error.message)
             })
     }
     return (
@@ -52,6 +55,9 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
+                        </div>
+                        <div>
+                            {error}
                         </div>
                     </form>
                 </div>
