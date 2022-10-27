@@ -4,6 +4,7 @@ import { AuthContext } from './Context/UseContext';
 import './CSS/Heade.css'
 import Toogle from './Toogle';
 import { FiLogOut } from 'react-icons/fi';
+import Tippy from '@tippyjs/react';
 
 
 const Header = () => {
@@ -46,7 +47,9 @@ const Header = () => {
 
                                 <div className="avatar">
                                     <div className="w-8 rounded">
-                                        <img src={user.photoURL} alt="Tailwind-CSS-Avatar-component" />
+                                        <Tippy content={user.displayName}>
+                                            <img src={user.photoURL} alt="Tailwind-CSS-Avatar-component" />
+                                        </Tippy>
                                     </div>
                                     <button onClick={logOut} className="btn ml-2 btn-outline"><FiLogOut /></button>
                                 </div>
