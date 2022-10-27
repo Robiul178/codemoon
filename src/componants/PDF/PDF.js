@@ -1,19 +1,17 @@
-import React from 'react';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
+// import React from "react";
+// import Pdf from "react-to-pdf";
 
-const StringContent = () => (
-    <Tippy content="Hello">
-        <button>My button</button>
-    </Tippy>
-);
+// const ref = React.createRef();
 
-const PDF = () => {
-    return (
-        <Tippy content={<span>Tooltip</span>}>
-            <button>My button</button>
-        </Tippy>
-    );
-};
-
-export default PDF;
+// export default function PDF() {
+//     return (
+//         <div className="App">
+//             <Pdf targetRef={ref} filename="code-example.pdf">
+//                 {({ toPdf }) => <button onClick={toPdf}>Generador de Pdf</button>}
+//             </Pdf>
+//             <div ref={ref}>
+//                 <h1>React to pdf 2</h1>
+//             </div>
+//         </div>
+//     );
+// }
