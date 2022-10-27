@@ -13,7 +13,7 @@ const CheckOut = () => {
                 <input type="text" placeholder="Your Phone Number" className="mt-2 input input-bordered input-info w-full max-w-lg" />
                 <button className="btn mt-2 btn-secondary w-full max-w-lg">Go Ahed</button>
             </div>
-            <div className="selected-course border p-4">
+            <div className="selected-course  border p-4">
                 <div className='flex relative top-3 border-b'>
                     <img className='w-20' src={image} alt="" />
                     <h1 className='text-xl relative left-5'>{title}</h1>

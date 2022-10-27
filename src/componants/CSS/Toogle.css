@@ -1,4 +1,4 @@
-.toogle {
+#toggle {
     display: flex;
     justify-content: space-between;
     border: 2px solid rgb(47, 54, 243);

@@ -4,6 +4,7 @@ import { AuthContext } from './Context/UseContext';
 import './CSS/Heade.css'
 import { FiLogOut } from 'react-icons/fi';
 import Tippy from '@tippyjs/react';
+import Toggle from './Toggle';
 
 
 const Header = () => {
@@ -121,6 +122,9 @@ const Header = () => {
                             <li><a><Link className="btn btn-ghost normal-case text-xl" to="/blog">BLOG</Link></a></li>
                             <li><a><Link className="btn btn-ghost normal-case text-xl" to="/faq">FAQ</Link></a></li>
                         </ul>
+                        <div>
+                            <Toggle></Toggle>
+                        </div>
                     </div>
                     <div className="navbar-end">
                         <div className='user-info'>
