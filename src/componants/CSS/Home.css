@@ -1,15 +1,17 @@
-.rm-container {
+.main-container {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    margin-bottom: 80px;
+}
 
+.text-side {
+    margin-top: 10rem;
+    padding: 50px;
 }
 
 @media screen and (max-width:768px) {
-
-    .rm-container {
+    .main-container {
+        background-color: red;
         display: grid;
         grid-template-columns: 2fr;
-
     }
 }

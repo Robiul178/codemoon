@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import '../CSS/ReadMore.css';
-// import PDF from '../PDF/PDF';
+import PDF from '../PDF/PDF';
 
 const ReadMore = () => {
     const course = useLoaderData();
@@ -21,10 +21,9 @@ const ReadMore = () => {
             </div>
             <div className='text-left p-4 mt-10'>
                 <h1 className='font-bold text-4xl text-yellow-300'>{title}</h1> <br />
-                {/* <Link to={`/pdf/${id}`}>
-                    <button className="btn btn-outline btn-success">PDF</button>
+                <Link to={`/pdf/${id}`}>
+                    <button className="btn btn-outline btn-success">Download Pdf</button>
                 </Link>
-                <PDF></PDF> */}
                 <div className='flex font-bold'>
                     <div className=' p-3 mr-4 mb-4 shadow-2xl'>
                         <h2>Course Duration</h2>

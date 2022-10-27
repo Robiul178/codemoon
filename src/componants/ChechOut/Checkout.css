@@ -1,7 +1,21 @@
 .checkout-page {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    width: 1400px;
-    position: relative;
-    left: 8%;
+}
+
+.selected-course {
+    margin-bottom: 25rem;
+}
+
+@media screen and (max-width:768px) {
+    .checkout-page {
+        display: grid;
+        grid-template-columns: 2fr;
+    }
+
+    .selected-course {
+        margin-top: 60px;
+        margin-bottom: 27rem;
+    }
+
 }

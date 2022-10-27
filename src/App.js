@@ -12,6 +12,7 @@ import Blog from './componants/Blog';
 import ReadMore from './componants/ReadMore/ReadMore';
 import CheckOut from './componants/ChechOut/CheckOut';
 import PDF from './componants/PDF/PDF';
+import NotFound404 from './componants/NotFound404/NotFound404';
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ function App() {
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '*',
+          element: <NotFound404></NotFound404>
         },
         {
           path: '/readmore/:id',
