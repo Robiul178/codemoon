@@ -11,6 +11,7 @@ import PrivetRoute from './routes/PrivetRoute';
 import Blog from './componants/Blog';
 import ReadMore from './componants/ReadMore/ReadMore';
 import CheckOut from './componants/ChechOut/CheckOut';
+import PDF from './componants/PDF/PDF';
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,11 @@ function App() {
         {
           path: '/checkout/:id',
           element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>,
+          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+        },
+        {
+          path: '/pdf/:id',
+          element: <PDF></PDF>,
           loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
         },
         {

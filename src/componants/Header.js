@@ -36,6 +36,7 @@ const Header = () => {
                         <li><Link className="btn btn-ghost normal-case text-xl" to="/courses/:id">COURSES</Link></li>
                         <li><Link className="btn btn-ghost normal-case text-xl" to="/faq">FAQ</Link></li>
                         <li><Link className="btn btn-ghost normal-case text-xl" to="/blog">BLOG</Link></li>
+                        <li><Link className="btn btn-ghost normal-case text-xl" to="/pdf/:id">PDF</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end h-14 ">
