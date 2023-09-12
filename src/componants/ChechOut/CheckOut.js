@@ -20,8 +20,8 @@ const CheckOut = () => {
                 </div>
                 <div className='flex justify-between mt-4 border-b'>
                     <div className='text-left'>
-                        <h1 className='text-xl'>Course Name:</h1>
-                        <h1 className='text-xl'>Price:</h1>
+                        <h1 className='text-xl'>Course Name :</h1>
+                        <h1 className='text-xl'>Price :</h1>
                         <h1 className='text-xl'>Course ID:</h1>
                     </div>
                     <div className='text-left'>
