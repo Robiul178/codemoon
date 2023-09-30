@@ -44,12 +44,12 @@ function App() {
         {
           path: '/checkout/:id',
           element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>,
-          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+          loader: ({ params }) => fetch(`https://server2-robiul178.vercel.app/courses/${params.id}`)
         },
         {
           path: '/pdf/:id',
           element: <PDF></PDF>,
-          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+          loader: ({ params }) => fetch(`https://server2-robiul178.vercel.app/courses/${params.id}`)
         },
         {
           path: '/register',
@@ -62,7 +62,7 @@ function App() {
         {
           path: '/readmore/:id',
           element: <ReadMore></ReadMore>,
-          loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+          loader: ({ params }) => fetch(`https://server2-robiul178.vercel.app/courses/${params.id}`)
         }
 
       ]

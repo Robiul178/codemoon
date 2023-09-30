@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 
 const SideMenu = (props) => {
+
     const { title, id } = props.course;
+
+
     return (
         <div className=' main-container '>
             <div className="side-scrool shadow-xl">
