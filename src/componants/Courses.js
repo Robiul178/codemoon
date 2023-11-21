@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import DisplayCourse from './DisplayCourse/DisplayCourse';
-import SideMenu from './DisplayCourse/SideMenu/SideMenu';
 import './CSS/Courses.css'
 
 const Courses = () => {
@@ -11,7 +10,10 @@ const Courses = () => {
         fetch('https://server2-robiul178.vercel.app/courses')
             .then(res => res.json())
             .then(data => setCourses(data));
-    }, [])
+    }, []);
+
+
+
 
     return (
         <div className='home-container'>
@@ -21,15 +23,6 @@ const Courses = () => {
                         course={course}
                         key={course.id}
                     ></DisplayCourse>)
-                }
-            </div>
-            <div className="side-menu">
-                {
-                    courses.map(course => <SideMenu
-                        course={course}
-                        key={course.id}
-                    ></SideMenu>)
-
                 }
             </div>
         </div>
